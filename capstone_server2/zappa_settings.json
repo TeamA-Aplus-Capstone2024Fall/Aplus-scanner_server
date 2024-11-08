@@ -1,0 +1,31 @@
+{
+    "dev": {
+        "app_function": "barcode_server.app",
+        "aws_region": "ap-northeast-2",
+        "exclude": [
+            "boto3",
+            "dateutil",
+            "botocore",
+            "s3transfer",
+            "concurrent"
+        ],
+        "profile_name": "default",
+        "project_name": "capstone-server",
+        "runtime": "python3.11",
+        "s3_bucket": "zappa-6lnabk78z",
+        "environment_variables": {
+            "LD_LIBRARY_PATH": "opt/lib"
+        },        
+        "layers" : [
+            "arn:aws:lambda:ap-northeast-2:050451381508:layer:my-zbar-layer:1"
+        ],
+        "include" : [
+            "bin/",
+            "PIL/",
+            "pillow.libs/",
+            "pillow-11.0.0.dist-info/",
+            "pyzbar/",
+            "pyzbar-0.1.9.dist-info/"
+        ]
+    }
+}
